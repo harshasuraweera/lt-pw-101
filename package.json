@@ -1,0 +1,22 @@
+{
+  "name": "lt-pw-101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshasuraweera/lt-pw-101.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshasuraweera/lt-pw-101/issues"
+  },
+  "homepage": "https://github.com/harshasuraweera/lt-pw-101#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5"
+  }
+}
