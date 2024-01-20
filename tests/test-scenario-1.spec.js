@@ -8,7 +8,7 @@ test('Test Scenario 1', async ({page, baseURL}) => {
         await page.goto(baseURL, {waitUntil: 'networkidle'});
     });
 
-    await test.step('Click “Simple Form Demo” under Input Forms', async () => {
+    await test.step('Click on “Simple Form Demo”', async () => {
         await page.locator('//a[contains(text(), "Simple Form Demo")]').click({timeout: 30000});
     });
 
@@ -19,12 +19,11 @@ test('Test Scenario 1', async ({page, baseURL}) => {
 
     await test.step('Enter values to enter message text box and click button', async () => {
         await page.locator('//*[@id="user-message"]').first().pressSequentially(WELCOME_LT_TEXT);
-        await page.locator('//*[@id="showInput"]').click();
+        await page.getByRole('button', {name: 'Get Checked Value'}).click();
     });
 
     await test.step('Verify message text', async () => {
-        await expect(page.locator('//*[@id="message"]')).toBeVisible({timeout: 10000});
-        await expect(page.locator('//*[@id="message"]')).toContainText("Welcome to LambdaTest");
+        await expect(page.getByText('Welcome to LambdaTest')).toBeVisible({timeout: 10000});
     });
 
 });
