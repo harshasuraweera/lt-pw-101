@@ -15,7 +15,7 @@ module.exports = defineConfig({
         trace: 'on',
         video: 'on',
         screenshot: 'on',
-        headless: !!process.env.CI
+        headless: true
     },
 
     projects: [
