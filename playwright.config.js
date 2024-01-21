@@ -10,7 +10,7 @@ module.exports = defineConfig({
     reporter: [
         ['html', {open: "never"}]
     ],
-    timeout: 190000, //increased due to the queued jobs
+    timeout: 200000, //increased due to the queued jobs
 
     use: {
         baseURL: 'https://www.lambdatest.com/selenium-playground',
