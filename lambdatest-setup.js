@@ -14,7 +14,7 @@ const capabilities = {
   'browserVersion': 'latest',
   'LT:Options': {
     'platform': 'Windows 10',
-    'build': 'Playwright JS Build',
+    'build': 'Playwright JS Build - Playwright 101 Assignment',
     'name': 'Playwright Test',
     'user': 'harshamanoj912',
     'accessKey': 'WumGH3qVRCoL7vTMQ3YT93dSeXCyBLENQAPm0N0nGAQ1zrZStB',
