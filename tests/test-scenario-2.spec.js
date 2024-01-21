@@ -1,6 +1,7 @@
-const {test, expect} = require('@playwright/test');
+const { expect} = require('@playwright/test');
+const { test } = require('../lambdatest-setup')
 
-test.only('Test Scenario 2', async ({page, baseURL}) => {
+test('Test Scenario 2', async ({page, baseURL}) => {
 
     await test.step('Open LambdaTest’s Selenium Playground from', async () => {
         await page.goto(baseURL, {waitUntil: 'networkidle'});
@@ -11,11 +12,10 @@ test.only('Test Scenario 2', async ({page, baseURL}) => {
     });
 
     await test.step('Set slider value to 95', async () => {
-        let targetValue = 95;
+        const targetValue = 95;
         let isCompleteDrag = false;
         await page.waitForSelector('//*[@id="slider3"]/div/input', {timeout: 30000});
         const element = await page.locator('//*[@id="slider3"]/div/input');
-        const rangeText = await page.locator('//*[@id="rangeSuccess"]');
         if (element) {
             if (element) {
                 while (!isCompleteDrag) {
@@ -34,6 +34,11 @@ test.only('Test Scenario 2', async ({page, baseURL}) => {
                 }
             }
         }
+    });
+
+    await test.step('Verify slider value is 95', async () => {
+        const targetValue = 95;
+        const rangeText = await page.locator('//*[@id="rangeSuccess"]');
         let rangeTextValue = await rangeText.textContent()
         await expect(rangeTextValue).toEqual(targetValue.toString());
     });

@@ -1,4 +1,5 @@
-const {test, expect} = require('@playwright/test');
+const { expect} = require('@playwright/test');
+const { test } = require('../lambdatest-setup')
 
 let WELCOME_LT_TEXT = "Welcome to LambdaTest";
 
