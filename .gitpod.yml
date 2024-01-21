@@ -1,16 +1,17 @@
-ports:
-  - port: 3000
-    onOpen: open-preview
-
-
-# .gitpod.yml
-
 # Use the Node.js base image
-image:
-  file: .gitpod.Dockerfile
+image: mcr.microsoft.com/playwright:v1.41.0-jammy
+#  file: .gitpod.Dockerfile
 
 # List of initial commands to run during workspace initialization
 # Install dependencies and start Playwright tests
-tasks:
+#tasks:
 #  - init: npm install
-  - command: npx playwright test
+#  - command: npx playwright test
+
+tasks:
+  - name: setup
+    command: npm install
+  - name: setup playwright
+    command: npx playwright install
+  - name: run tests
+    command: npx playwright test
