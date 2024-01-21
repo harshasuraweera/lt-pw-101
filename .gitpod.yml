@@ -10,8 +10,9 @@ image: mcr.microsoft.com/playwright:v1.41.0-jammy
 
 tasks:
   - name: setup
-    command: npm install
-  - name: setup playwright
-    command: npx playwright install
-  - name: run tests
-    command: npx playwright test
+    command: |
+      export LT_USERNAME="$LT_USERNAME"
+      export LT_ACCESS_KEY="$LT_ACCESS_KEY"
+      npm install
+      npx playwright install
+      npx playwright test
