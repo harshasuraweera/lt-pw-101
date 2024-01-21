@@ -12,5 +12,5 @@ image:
 # List of initial commands to run during workspace initialization
 # Install dependencies and start Playwright tests
 tasks:
-  - init: npm install
-    command: npx playwright test
+#  - init: npm install
+  - command: npx playwright test
